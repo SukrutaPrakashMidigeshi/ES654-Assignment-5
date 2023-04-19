@@ -1,0 +1,19 @@
+Comparing the MLP model with VGG16:
+We conducted two iterations of the MLP model, each with a similar number of parameters to the VGG16 model. Despite having a high number of parameters, the MLP model achieved noticeably lower accuracy than the VGG16 model in image classification tasks. This is likely due to the MLP's inability to factor in the codependency of neighboring pixels, which is a key feature of convolutional neural networks like VGG16. The VGG16 model uses convolutional layers to extract important features from the input images while preserving the spatial information of the pixels. This allows the model to accurately identify objects even when they are slightly shifted in the image. In contrast, the MLP model flattens the input images into a vector, which loses the spatial information of the pixels and makes it difficult to accurately classify images with subtle variations in pixel position. Additionally even with the increase in the number of layers used the accuracy obtained on the test dataset remains almost the same. 
+
+The accuracy we obtained on the test dataset is as follows:
+Case1 - with 2 hidden layers - 51.2%
+Case 2 - with 3 hidden layers - 50.2 %
+Thus the accuracy of the model did not change much in spite of adding more layers. THis indicates that adding complexity to a model does not always increase the accuracy on the test set. The model ran for a total of 10 epochs with a batch size of 8. The following are the plots obtained: 
+
+For 2 layers : 
+
+Cross-entropy Loss - 
+
+Accuracy - 
+
+For 3 layers : 
+
+Cross-entropy Loss- 
+
+Accuracy - 
